@@ -1,5 +1,5 @@
 import SearchContact from "./Contacts/SearchContact";
-
+import { Link } from 'react-router-dom';
 import { BACKGROUND, PURPLE } from "../helpers/colors";
 
 const Navbar = () => {
@@ -20,9 +20,16 @@ const Navbar = () => {
                     <div className="col">
                         <SearchContact />
                     </div>
+                    <div className="col">
+                        <Link to="/books">کتاب‌ها</Link>
+                    </div>
+                    <div className="col">
+                        <Link to="/about">درباه‌ ما</Link>
+                    </div>
                 </div>
             </div>
         </nav>
+
     );
 };
 
