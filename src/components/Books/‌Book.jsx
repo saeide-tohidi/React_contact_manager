@@ -1,12 +1,14 @@
-import { ORANGE, CURRENTLINE, PURPLE } from "../../helpers/colors";
-import { useParams } from 'react-router-dom'
-import { getBook } from "../../data/data"
+import { ORANGE, CURRENTLINE, PURPLE, RED } from "../../helpers/colors";
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
+import { getBook, deleteBook } from "../../data/data"
 
 
 
 
 export default function Book() {
-    const params = useParams()
+    const params = useParams();
+    const naviagate = useNavigate();
+    const location = useLocation();
     const book = getBook(parseInt(params.bookId))
     if (book) {
         return (
@@ -47,6 +49,20 @@ export default function Book() {
                                         </span>
                                     </li>
                                 </ul>
+                            </div>
+                            <div className="col-md-1 col-sm-1 d-flex flex-column align-items-center">
+
+                                <button
+                                    className="btn my-1"
+                                    style={{ backgroundColor: RED }}
+                                    onClick={() => {
+                                        deleteBook(book.number)
+                                        naviagate('/books' + location.search)
+                                    }}
+
+                                >
+                                    <i className="fa fa-trash" />
+                                </button>
                             </div>
 
                         </div>
