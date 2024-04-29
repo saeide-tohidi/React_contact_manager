@@ -8,3 +8,8 @@ export { default as Contact } from './Contacts/Contact';
 
 export { default as Navbar } from './Navbar';
 export { default as Spinner } from './Spinner';
+
+
+export { default as Books } from './Books/Books';
+export { default as Book } from './Books/‌Book';
+export { default as About } from './Pages/About';
