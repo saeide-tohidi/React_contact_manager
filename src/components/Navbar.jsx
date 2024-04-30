@@ -21,10 +21,13 @@ const Navbar = () => {
                         <SearchContact />
                     </div>
                     <div className="col">
-                        <Link to="/books">کتاب‌ها</Link>
+                        <Link to="/contacts/">مخاطبین</Link>
                     </div>
                     <div className="col">
-                        <Link to="/about">درباه‌ ما</Link>
+                        <Link to="/books/">کتاب‌ها</Link>
+                    </div>
+                    <div className="col">
+                        <Link to="/about/">درباه‌ ما</Link>
                     </div>
                 </div>
             </div>
