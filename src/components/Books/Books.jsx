@@ -32,7 +32,7 @@ const Books = () => {
                         .map((book) => (
                             <Link
                                 style={{ display: "block" }}
-                                to={`/books/${book.number}${location.search}`}
+                                to={`/books/${book.number}/${location.search}`}
                                 key={book.number}
                             >
                                 {book.name}
