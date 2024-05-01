@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { ORANGE } from "../../helpers/colors";
+import Clock from "./Clock";
 
 
 
@@ -8,7 +9,10 @@ class About extends Component {
     constructor() {
         super();
         console.log('About... constructor');
-        this.state = { date: new Date(), showClock: true, color: false }
+        this.state = { date: new Date(), showClock: true, color: false };
+        this.clockChange = this.clockChange.bind(this);
+        this.colorChange = this.colorChange.bind(this)
+
     }
 
     static getDerivedStateFormProps(props, state) {
@@ -33,13 +37,29 @@ class About extends Component {
         this.setState({ date: new Date() })
     }
 
+    clockChange() {
+        this.setState({ showClock: !this.state.showClock })
+    }
+
+    colorChange() {
+        this.setState({ color: !this.state.color })
+    }
+
+
     render() {
+        const { date, showClock, color } = this.state
 
         return (
             <div className="text-center py-5 ">
                 <p className="h3" style={{ color: ORANGE }}>درباره‌ی ما</p>
                 <br />
-                <p className="h3" style={{ color: ORANGE }}>ساعت در حال حاضر برابر است با : {this.state.date.toLocaleTimeString()}</p>
+                {
+                    showClock ? <Clock date={date} color={color} /> : null
+                }
+
+                <hr />
+                <button onClick={this.clockChange}>تغییر ساعت</button>
+                <button onClick={this.colorChange}>تغییر رنگ</button>
             </div>
         )
 
