@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { ORANGE } from "../../helpers/colors";
-import Clock from "./Clock";
+// import Clock from "./Clock";
+import SecoundClock from "./SecoundClock";
 
 
 
@@ -54,7 +55,7 @@ class About extends Component {
                 <p className="h3" style={{ color: ORANGE }}>درباره‌ی ما</p>
                 <br />
                 {
-                    showClock ? <Clock date={date} color={color} /> : null
+                    showClock ? <SecoundClock date={date} color={color} /> : null
                 }
 
                 <hr />
