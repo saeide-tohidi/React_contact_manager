@@ -1,6 +1,6 @@
 import { CURRENTLINE, CYAN, ORANGE, PURPLE, RED } from "../../helpers/colors";
 
-const Contact = () => {
+const Contact = ({ contact }) => {
     return (
         <div className="col-md-6">
             <div style={{ backgroundColor: CURRENTLINE }} className="card my-2">
@@ -19,21 +19,21 @@ const Contact = () => {
                                 <li className="list-group-item list-group-item-dark">
                                     نام و نام خانوداگی :{"  "}
                                     <span className="fw-bold">
-                                        سعیده توحیدی
+                                        {contact.fullname}
                                     </span>
                                 </li>
 
                                 <li className="list-group-item list-group-item-dark">
                                     شماره موبایل :{"  "}
                                     <span className="fw-bold">
-                                        09350001122
+                                        {contact.mobile}
                                     </span>
                                 </li>
 
                                 <li className="list-group-item list-group-item-dark">
                                     آدرس ایمیل :{"  "}
                                     <span className="fw-bold">
-                                        s.tohidi22@gmail.com
+                                        {contact.email}
                                     </span>
                                 </li>
                             </ul>
