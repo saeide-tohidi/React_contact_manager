@@ -9,14 +9,40 @@ import {
   About,
   Book,
 } from "./components";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import { ORANGE } from './helpers/colors';
+import axios from 'axios';
+import { getAllContacts, getAllGroups } from './services/contactServices';
+
 
 
 const App = () => {
   const [loading, setLoading] = useState(false)
   const [getContacts, setContacts] = useState([])
+  const [getGroups, setGroups] = useState([])
+
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const { data: contactsData } = await getAllContacts();
+        const { data: groupsData } = await getAllGroups();
+
+        setContacts(contactsData);
+        setGroups(groupsData);
+        setLoading(false);
+
+      } catch (err) {
+        setLoading(false);
+        console.log(err.message)
+      }
+    };
+    fetchData();
+  }, []);
+
+
   return (
     <div className="App">
       <Navbar />
