@@ -4,9 +4,14 @@
       "id": "ddd8",
       "fullname": "سارا موسوی",
       "photo": "",
-      "email": "email",
+      "email": [
+        "s.tohidi22@yahoo.com"
+      ],
       "mobile": "09123456",
-      "group": "1"
+      "group": "1",
+      "job": [
+        "ناجی"
+      ]
     },
     {
       "id": "6393",
